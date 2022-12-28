@@ -1,37 +1,25 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import './App.css';
 import Index from './main/Index';
-import DeleteForm from './user/DeleteForm';
-import List from './user/List';
-import UpdateForm from './user/UpdateForm';
-import UploadForm from './user/UploadForm';
-import WriteForm from './user/WriteForm';
+import Login from './user/Login';
+import Notfound from './user/Notfound';
 
 const App = () => {
   return (
-    <BrowserRouter>
-      <>
-        {/* 화면에 보이는 영역 */}
+    <div>
+      <BrowserRouter>
+       {/* header와 footer는 여기에 항상 나오면서 routes로 메인만 바꿔줌 */}
         <Routes>
-          <Route path='/' element={ <Index />} />
-          <Route path='/user/writeForm' element={ < WriteForm />} />
-          <Route path='/user/list' element={ <List />} />
-          <Route path='/user/updateForm' element={ <UpdateForm />} />
-          <Route path='/user/deleteForm' element={ <DeleteForm />} />
-          <Route path='/user/uploadForm' element={ <UploadForm />} />
+          {/* 여기에는 header에서 클릭한 곳을 보여주게 */}
+          <Route path='/' element={ <Index />}></Route>
+          {/* <Route path='/login' element={ <Login />}></Route> */}
+          {/* <Route path='/login' element={ <Login />}></Route> */}
+          <Route path='*' element={ <Notfound />}></Route>
         </Routes>
-      </>
-    </BrowserRouter>
+      </BrowserRouter>
+    </div>
   );
 };
 
 export default App;
-
-/*
-REST API                      axios
-                              axios의 request method
-POST : 데이터 등록 및 전송     axios.post()
-GET : 데이터 조회             axios.get()
-PUT : 데이터 수정             axios.put()
-DELETE : 데이터 삭제          axios.delete()
-*/
