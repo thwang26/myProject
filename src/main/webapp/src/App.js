@@ -1,21 +1,19 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
+import Notfound from './pages/Notfound';
+import Community from './nav/Community';
 import Index from './main/Index';
-import Login from './user/Login';
-import Notfound from './user/Notfound';
+import Header from './main/Header';
+import Footer from './main/Footer';
 
 const App = () => {
   return (
     <div>
       <BrowserRouter>
-       {/* header와 footer는 여기에 항상 나오면서 routes로 메인만 바꿔줌 */}
         <Routes>
-          {/* 여기에는 header에서 클릭한 곳을 보여주게 */}
-          <Route path='/' element={ <Index />}></Route>
-          {/* <Route path='/login' element={ <Login />}></Route> */}
-          {/* <Route path='/login' element={ <Login />}></Route> */}
-          <Route path='*' element={ <Notfound />}></Route>
+          <Route path='/index/*' element={ <Index />} />
+          <Route path='*' element={ <Notfound />} />
         </Routes>
       </BrowserRouter>
     </div>

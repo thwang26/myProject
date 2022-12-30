@@ -7,6 +7,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import jakarta.servlet.http.HttpSession;
 import user.bean.UserDTO;
 import user.dao.UserDAO;
 
@@ -100,6 +101,13 @@ public class UserServiceImpl implements UserService {
 			return userDAO.getUserSearchName(keyword);
 		else
 			return userDAO.getUserSearchId(keyword);
+	}
+
+	@Override
+	public String login(UserDTO userDTO) {
+		UserDTO userDTO2 = userDAO.findByUserDTO(userDTO.getId(), userDTO.getPwd());
+		if(userDTO2 != null) return userDTO2.getId();
+		else return null;
 	}
 	
 }

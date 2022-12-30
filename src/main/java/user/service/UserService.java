@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
+import jakarta.servlet.http.HttpSession;
 import user.bean.UserDTO;
 
 public interface UserService {
@@ -23,5 +24,7 @@ public interface UserService {
 	//public List<UserDTO> search(String search, String keyword);
 	
 	public List<UserDTO> search(Map<String, String> map);
+
+	public String login(UserDTO userDTO);
 
 }

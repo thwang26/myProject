@@ -1,0 +1,56 @@
+.container {
+    padding: 0;
+    margin: 0 auto;
+    width: 1000px;
+    text-align: center;
+}
+.writeForm {
+    padding: 0;
+    margin: 0 auto;
+    width: 500px;
+    display: inline-block;
+}
+.writeForm h3{
+    text-align: left;
+}
+.writeForm span{
+    display: block;
+    width: 100%;
+    height: 51px;
+    border: solid 1px #e4dcdc;
+    padding: 10px 110px 10px 14px;
+    background: #fff;
+    box-sizing: border-box;
+}
+.writeForm input{
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 29px;
+    padding-right: 25px;
+    line-height: 29px;
+    border: none;
+    background: #fff;
+    font-size: 15px;
+    box-sizing: border-box;
+    /* z-index: 10; */
+}
+.writeForm input:focus {
+    outline: none;
+}
+.birth {
+    /* display: inline-block; */
+    /* width: 30%; */
+    /* height: 50px; */
+    /* border: solid 1px #e4dcdc; */
+    padding: 0px 20px 10px 0px;
+    /* background: #fff; */
+    /* box-sizing: border-box; */
+}
+.birth select{
+    width: 100%;
+    border: none;
+}
+.birth select:focus{
+    outline: none;
+}

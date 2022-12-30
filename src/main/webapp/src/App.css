@@ -37,23 +37,16 @@
   }
 }
 
-.popup {
-  width: 400px;
-  height: 500px;
-  background: #B11485; 
-  position: absolute;
-  left: 50%;
-  top: 50%; 
-  padding: 30px;
-  box-sizing: border-box;
-  transform: translate(-50%, -50%); 
-}
-
 html {
   padding: 0;
   margin: 0;
 }
 body {
   padding: 0;
-  margin: 0;
+  margin: 0 auto;
 }
+a { text-decoration: none; }
+a:visited { text-decoration: none; }
+a:hover { text-decoration: none; }
+a:focus { text-decoration: none; }
+a:active { text-decoration: none; }
