@@ -18,17 +18,11 @@ public class MainController {
 	@Autowired
 	private UserService userService;
 	
-	@GetMapping(value="/hello")
+	@GetMapping(value="/")
 	@ResponseBody
 	public String index() {
 		System.out.println("hello react");
 		return "Hello React!!";
-	}
-	
-	@GetMapping(value="/home")
-	@ResponseBody
-	public String home() {
-		return "Dream comes true";
 	}
 	
 }

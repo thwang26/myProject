@@ -24,4 +24,7 @@ public interface UserDAO extends JpaRepository<UserDTO, String>{
 	
 	@Query("select userDTO from UserDTO userDTO where userDTO.id like '%' || :keyword || '%'")// Entity와 대소문자까지 같아야 한다.
 	public List<UserDTO> getUserSearchId(@Param("keyword") String keyword);
+
+	@Query("select userDTO from UserDTO userDTO where userDTO.id = :id and userDTO.pwd = :pwd")
+	public UserDTO findByUserDTO(@Param("id") String id, @Param("pwd") String pwd);
 }
