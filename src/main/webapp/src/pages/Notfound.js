@@ -23,7 +23,7 @@ const Notfound = () => {
                 </div>
                 <br/><br/>
                 <p>잘못된 주소에요.</p>
-                <a href="/">메인화면으로 이동할게요</a>
+                <a href="/index">메인화면으로 이동할게요</a>
                 <br/><br/>
             </div>
         </div>
