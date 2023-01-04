@@ -2,9 +2,9 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Link, Navigate, useNavigate } from 'react-router-dom';
 import img02 from '../image/img2.png';
-import '../css/WriteForm.css';
+import '../css/SignUp.css';
 
-const WriteForm = () => {
+const SignUp = () => {
     // const [name, setName] = useState('');
     // const [id, setId] = useState('');
     // const [pwd, setPwd] = useState('');
@@ -218,10 +218,10 @@ const WriteForm = () => {
                     </div>
                 </div>
                 <div id="mobDiv">
-                    <h3><label for="phoneNo">휴대전화</label></h3>
+                    <h3><label>휴대전화</label></h3>
                     <div>
 						<span>
-							<input type="tel" id="phoneNo" name="phoneNo" placeholder="전화번호 입력" aria-label="전화번호 입력" class="int" maxLength="16"/>
+							<input type="tel" id="phoneNo" name="phoneNo" placeholder="전화번호 입력" maxLength="16"/>
 						</span>
                         <span>인증번호 받기</span>
                     </div>
@@ -236,4 +236,4 @@ const WriteForm = () => {
     );
 };
 
-export default WriteForm;
+export default SignUp;

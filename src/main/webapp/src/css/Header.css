@@ -30,9 +30,23 @@ ul.user {
 .header {
     padding: 0;
     margin: 0 auto;
-    width: 1000px;
+    width: 100%;
 }
 .top{
     display: flex;
     justify-content: space-between;
+}
+.myPage{
+    overflow: hidden;
+    position: absolute;
+    top: 0px;
+    width: 372px;
+    z-index: 991;
+    height: 474px;
+    margin-top: 57px;
+    right: 0px;
+    margin-right: 4px;
+    max-height: calc(-83px + 100vh);
+    max-width: calc(-24px + 100vw);
+    background-color: blue;
 }
