@@ -2,6 +2,10 @@
     color: magenta;
     width: 300px;
     left: 50px;
+    position: relative;
+}
+.topMenu{
+    display: contents;
 }
 :link {
     text-decoration: none;
@@ -10,10 +14,12 @@ li {
     list-style: none;
     cursor: pointer;
     display: inline-block;
+    font-size: 18px;
+    font-weight: 999;
 }
 li:hover {
     color: magenta;
-    text-decoration: underline;
+    text-decoration: none;
 }
 ul.user {
     right: 50px;
@@ -34,7 +40,6 @@ ul.user {
 }
 .top{
     display: flex;
-    justify-content: space-between;
 }
 .myPage{
     overflow: hidden;
@@ -49,4 +54,7 @@ ul.user {
     max-height: calc(-83px + 100vh);
     max-width: calc(-24px + 100vw);
     background-color: blue;
+}
+.nav a{
+    color: blue;
 }

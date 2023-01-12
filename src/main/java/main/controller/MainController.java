@@ -9,16 +9,16 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import user.bean.UserDTO;
-import user.service.UserService;
+//import user.bean.UserDTO;
+//import user.service.UserService;
 
 @CrossOrigin(origins = "*")
 @Controller
 public class MainController {
 	@Autowired
-	private UserService userService;
+	//private UserService userService;
 	
-	@GetMapping(value="/")
+	@GetMapping(value="/d")
 	@ResponseBody
 	public String index() {
 		System.out.println("hello react");

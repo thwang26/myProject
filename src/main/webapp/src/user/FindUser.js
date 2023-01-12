@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Tools = () => {
+const FindUser = () => {
     return (
         <div>
-            tools
+            hi
         </div>
     );
 };
 
-export default Tools;
+export default FindUser;
