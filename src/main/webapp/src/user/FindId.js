@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Tools = () => {
+const FindId = () => {
     return (
         <div>
-            tools
+            아이디 찾기
         </div>
     );
 };
 
-export default Tools;
+export default FindId;

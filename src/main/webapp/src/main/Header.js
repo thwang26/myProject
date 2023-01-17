@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Login from '../user/Login';
 import '../css/Header.css';
+import axios from 'axios';
 
 const Header = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -17,46 +18,57 @@ const Header = () => {
         setSession(0);
         setMyPage('hidden');
     };
-
-    const onComunity = () => {
-        
-    }
-
-    const onTools = () => {
-        
-    }
+    // useEffect(() => {
+    //     const token = localStorage.getItem('token');
+    
+    //     if (token) {
+    //       // Send an HTTP request to the server to check if the token is valid
+    //       fetch('/api/check-token', {
+    //         headers: {
+    //           'Authorization': `Bearer ${token}`
+    //         }
+    //       })
+    //         .then(response => {
+    //           if (response.status === 200) {
+    //             setIsLoggedIn(true);
+    //           } else {
+    //             setIsLoggedIn(false);
+    //           }
+    //         })
+    //         .catch(error => {
+    //           console.error(error);
+    //           setIsLoggedIn(false);
+    //         });
+    //     } else {
+    //       setIsLoggedIn(false);
+    //     }
+    //   }, []);
 
     return (
         <div className='header'>
             <div className='top'>
-                <Link to='/index'><h1 className='logo'>점주광장</h1></Link>
+                <h1 className='logo'><Link to='/index'>점주광장</Link></h1>
                 {/* <li onClick={ onLoginOpen }><Link to='/login'>로그인</Link></li> */}
                 <ul className="topMenu">
-                {session === 0 && (
-                    <Link to="/index/login">
-                    <li>로그인</li>
-                    </Link>
-                )}
-                {session !== 0 && (
-                    <>
-                    <li onClick={onMyPage}>마이페이지</li>
+                    <div>
+                        <li className='nav'><Link to='/index/community'>소식광장</Link></li>
+                        <li className='nav'><Link to='/index/salary'>급여계산기</Link></li>
+                        <li><Link to="/index/login">로그인</Link></li>
+                        <li onClick={onMyPage}>마이페이지</li>
+                    </div>
                     <div className="myPage" style={{ visibility: myPage }}>
-                        fds
                         <li onClick={logout}>로그아웃</li>
                     </div>
-                    </>
-                )}
                 </ul>
             </div>
             <div className='nav'>
-                <Link to='/index/community'><li onClick={ onComunity }>소식광장</li></Link>
-                <Link to='/index/tools'><li onClick={ onTools }>도구광장</li></Link>
+
             </div>
             <hr/>
-            <div className='searchDiv'>
+            {/* <div className='searchDiv'>
                 <input className='search' type='text' placeholder='검색어 입력'/>
                 <button>검색</button>
-            </div>
+            </div> */}
         </div>
     );
 };
