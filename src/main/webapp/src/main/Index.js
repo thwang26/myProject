@@ -9,6 +9,8 @@ import SignUp from '../user/SignUp';
 import Login from '../user/Login';
 import FindId from '../user/FindId';
 import FindPassword from '../user/FindPassword';
+import ChangePwd from '../user/ChangePwd';
+import IndexNotFound from '../pages/IndexNotFound';
 
 const Index = () => {
     return (
@@ -21,6 +23,8 @@ const Index = () => {
                 <Route path='/signUp' element={ <SignUp />} />
                 <Route path='/findId' element={ <FindId />} />
                 <Route path='/findPassword' element={ <FindPassword />} />
+                <Route path='/changePwd' element={ <ChangePwd />} />
+                <Route path='/indexNotFound' element={ <IndexNotFound />} />
                 <Route path='/*' element={ <Main />} />
                 </Routes>
             <Footer />

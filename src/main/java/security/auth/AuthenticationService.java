@@ -65,4 +65,17 @@ public class AuthenticationService {
 		else return "exist";
 	}
 
+	public String findId(String email) {
+		String userId = repository.findUserEmail(email);
+		return userId;
+	}
+
+	public String changePwd(String email, String pwd) {
+		String password = passwordEncoder.encode(pwd);
+		System.out.println("여기까지1");
+		int success = repository.changePwd(email, password);
+		System.out.println("여기까지2");
+		return String.format("%d", success);
+	}
+
 }

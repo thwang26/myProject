@@ -84,7 +84,7 @@ const SignUp = () => {
                 else alert('인증번호가 일치하지 않습니다')
             })
             .catch(err => console.log(err));
-        }
+        } else alert('인증번호를 입력 해 주세요')
     }//이메일 인증번호 검증
 
     const onWriteSubmit = (e) => {
@@ -113,8 +113,9 @@ const SignUp = () => {
             setNameDiv('이름을 입력하세요')
         }else if(email == '' || !emailTest.test(email)){
             alert("올바른 이메일 주소를 입력하세요")
+        }else if(emailConfirm === 0){
+            alert('이메일 인증이 완료되지 않았습니다')
         }else if(ok === 1 && emailConfirm === 1){
-            alert('가즈아')
             console.log(JSON.stringify(form))
             axios.post('http://localhost:8080/auth/register', JSON.stringify(form), {
                 headers: {

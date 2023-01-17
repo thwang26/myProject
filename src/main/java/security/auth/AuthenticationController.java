@@ -38,4 +38,16 @@ public class AuthenticationController {
 	public ResponseEntity<String> isExistEmail(@RequestParam String email) {
 		return ResponseEntity.ok(service.isExistEmail(email));
 	}
+	
+	@GetMapping("/findId")
+	public ResponseEntity<String> findId(@RequestParam String email) {
+		return ResponseEntity.ok(service.findId(email));
+	}
+	
+	@PostMapping("/changePwd")
+	public ResponseEntity<String> changePwd(@RequestBody ChangePwdRequest request) {
+		System.out.println("email: "+request.getEmail());
+		System.out.println("password: "+request.getPassword());
+		return ResponseEntity.ok(service.changePwd(request.getEmail(), request.getPassword()));
+	}
 }

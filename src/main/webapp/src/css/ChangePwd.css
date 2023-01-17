@@ -4,13 +4,13 @@
     width: 1000px;
     text-align: center;
 }
-.findUserForm {
+.changePwdForm {
     padding: 0;
     margin: 0 auto;
     width: 500px;
     display: inline-block;
 }
-.findUserForm span{
+.changePwdForm span{
     display: block;
     width: 70%;
     height: 51px;
@@ -19,7 +19,7 @@
     background: #fff;
     box-sizing: border-box;
 }
-.findUserForm input{
+.changePwdForm input{
     display: block;
     position: relative;
     width: 100%;
@@ -32,13 +32,13 @@
     box-sizing: border-box;
     /* z-index: 10; */
 }
-.loginForm input:focus {
+.changePwdForm input:focus {
     outline: none;
 }
 .findUserDiv {
     display: flex;
 }
-.sendCodeBtn {
+.changePwdBtn {
     display: block;
     width: 20%;
     padding: 13px 0 13px;
@@ -47,7 +47,7 @@
     background-color: #03c75a;
     box-sizing: border-box;
 }
-.sendCodeBtn .btnText {
+.changePwdBtn .changePwdText {
     font-size: 14px;
     font-weight: 700;
     line-height: 24px;
@@ -56,7 +56,4 @@
 .emailDiv {
     display: flex;
     justify-content: space-between;
-}
-.findUserForm input:focus {
-    outline: none;
 }
