@@ -16,14 +16,14 @@ public class EmailServiceImpl implements EmailService{
 	@Autowired
     JavaMailSender emailSender;
  
-    public static final String ePw = createKey();
+    public static String ePw;
  
     private MimeMessage createMessage(String to)throws Exception{
         System.out.println("보내는 대상 : "+ to);
         System.out.println("인증 번호 : "+ePw);
         MimeMessage  message = emailSender.createMimeMessage();
         message.addRecipients(RecipientType.TO, to);//보내는 대상
-        message.setSubject("이메일 인증 테스트");//제목
+        message.setSubject("[CVSowner] 이메일 인증을 완료해주세요");//제목
  
         String msgg="";
         msgg+= "<div style='margin:20px;'>";
@@ -72,6 +72,7 @@ public class EmailServiceImpl implements EmailService{
     @Override
     public String sendSimpleMessage(String to)throws Exception {
         // TODO Auto-generated method stub
+    	ePw = createKey();
     	MimeMessage message = createMessage(to);
         try{//예외처리
         	emailSender.send(message);
@@ -87,7 +88,7 @@ public class EmailServiceImpl implements EmailService{
 		System.out.println("인증코드 : " + ePw);
 		System.out.println("입력코드 : " + verifyCode);
 		if(verifyCode.equals(ePw)) {
-			return "vefiry";
+			return "verify";
 		}else return "false";
 	}
 }

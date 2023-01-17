@@ -28,10 +28,9 @@ public class User implements UserDetails{
 	@GeneratedValue
 	private Integer seq;
 	private String id;
-	private String firstname;
-	private String lastname;
-	private String email;
 	private String password;
+	private String name;
+	private String email;
 	
 	@Enumerated(EnumType.STRING)
 	private Role role;

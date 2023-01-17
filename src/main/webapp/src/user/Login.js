@@ -47,6 +47,7 @@ const Login = () => {
                         alert("로그인 성공")
                         console.log(res.data)
                         localStorage.setItem('token', res.data.token)
+                        navigate('/index');
                     }
                 })
                 .catch(error => {
@@ -64,22 +65,25 @@ const Login = () => {
         <div className='container'>
             <div className='loginForm'>
                 <div>
-                    <h3>아이디</h3>
                     <span>
                         <input type='text' name='id' value={ id } onChange={ onInput } placeholder='아이디 입력'/>
                         <div>{idDiv}</div>
                     </span>
                 </div>
                 <div>
-                <h3>비밀번호</h3>
                     <span>
                         <input type='password' name='password' value={ password } onChange={ onInput } placeholder='비밀번호 입력'/>
                         <div>{pwdDiv}</div>
                     </span>
+                </div>&nbsp;
+                <div>
+                    <button style={{ cursor : 'pointer' }} className='loginButton' onClick={ onLogin }><div className='loginText'>로그인</div></button>
                 </div>
-                <button style={{ cursor : 'pointer' }} onClick={ onLogin }>로그인</button>
-                <p><Link to='/index/findUser'>정보를 잊어버렸어요</Link></p>
-                <p><Link to='/index/signUp'>회원가입</Link></p>
+                <ul>
+                    <li><Link to='/index/findId'>아이디 찾기</Link></li>&emsp;|&emsp;
+                    <li><Link to='/index/findPassword'>비밀번호 찾기</Link></li>&emsp;|&emsp;
+                    <li><Link to='/index/signUp'>회원가입</Link></li>
+                </ul>
             </div>
         </div>
     );

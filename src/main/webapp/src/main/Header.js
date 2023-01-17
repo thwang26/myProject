@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Login from '../user/Login';
 import '../css/Header.css';
+import axios from 'axios';
 
 const Header = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -17,14 +18,6 @@ const Header = () => {
         setSession(0);
         setMyPage('hidden');
     };
-
-    const onComunity = () => {
-        
-    }
-
-    const onTools = () => {
-        
-    }
     // useEffect(() => {
     //     const token = localStorage.getItem('token');
     

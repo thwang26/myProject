@@ -1,5 +1,6 @@
 package security.auth;
 
+import org.hibernate.internal.build.AllowSysOut;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -23,8 +24,7 @@ public class AuthenticationService {
 	public AuthenticationResponse register(RegisterRequest request) {
 		var user = User.builder()
 			.id(request.getId())
-			.firstname(request.getFirstname())
-			.lastname(request.getLastname())
+			.name(request.getName())
 			.email(request.getEmail())
 			.password(passwordEncoder.encode(request.getPassword()))
 			.role(Role.USER)
@@ -50,4 +50,19 @@ public class AuthenticationService {
 			.token(jwtToken)
 			.build();
 	}
+
+	public String isExistId(String id) {
+		var existId = repository.findById(id);
+		System.out.println(existId);
+		if(existId.isEmpty()) return "non_exist";
+		else return "exist";
+	}
+	
+	public String isExistEmail(String email) {
+		var existEmail = repository.findByEmail(email);
+		System.out.println(existEmail);
+		if(existEmail.isEmpty()) return "non_exist";
+		else return "exist";
+	}
+
 }

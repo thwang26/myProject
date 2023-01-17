@@ -1,11 +1,11 @@
 import React from 'react';
 
-const FindUser = () => {
+const FindId = () => {
     return (
         <div>
-            hi
+            아이디 찾기
         </div>
     );
 };
 
-export default FindUser;
+export default FindId;

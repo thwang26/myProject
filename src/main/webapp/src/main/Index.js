@@ -6,9 +6,9 @@ import Community from '../nav/Community';
 import Salary from '../nav/Salary';
 import Main from './Main';
 import SignUp from '../user/SignUp';
-import Notfound from '../pages/Notfound';
 import Login from '../user/Login';
-import FindUser from '../user/FindUser';
+import FindId from '../user/FindId';
+import FindPassword from '../user/FindPassword';
 
 const Index = () => {
     return (
@@ -19,7 +19,8 @@ const Index = () => {
                 <Route path='/community' element={ <Community />} />
                 <Route path='/salary' element={ <Salary />} />
                 <Route path='/signUp' element={ <SignUp />} />
-                <Route path='/findUser' element={ <FindUser />} />
+                <Route path='/findId' element={ <FindId />} />
+                <Route path='/findPassword' element={ <FindPassword />} />
                 <Route path='/*' element={ <Main />} />
                 </Routes>
             <Footer />
